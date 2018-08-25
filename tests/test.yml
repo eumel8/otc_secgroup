@@ -1,5 +1,13 @@
 ---
 - hosts: localhost
-  remote_user: root
+  gather_facts: no
+  vars_files:
+   - "vars/tenant.yml"
+  vars:
+    # Secgroup
+    vpc_name: "{{ default.vpc_name }}"
+    secgroups: "{{ secgroups }}"
+    secgrouprules: "{{ securitygroups[secgroup_name] }}"
   roles:
-    - otc_secgroup
+    - role: "otc_auth"
+    - role: "otc_secgroup"

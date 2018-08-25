@@ -1,0 +1,6 @@
+---
+default:
+  vpc_name: "ansible-vpc01"
+securitygroups:
+  ansible-test02:
+    - "ingress;IPv4;tcp;22022;22022;0.0.0.0/0"
