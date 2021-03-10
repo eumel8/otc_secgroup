@@ -2,7 +2,7 @@
   uri:
     url: "{{ AUTH_URL_VPC }}/v1/{{ PROJECT_ID }}/security-groups"
     method: GET
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     headers:
@@ -26,7 +26,7 @@
   uri:
     url: "{{ AUTH_URL_VPC }}/v2.0/security-group-rules?security_group_id={{ secgroup_id }}"
     method: GET
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     headers:
@@ -47,7 +47,7 @@
     url: "{{ AUTH_URL_VPC }}/v2.0/security-group-rules/{{ secgrouprule_id }}"
     method: DELETE
     body_format: raw
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     status_code: 200,201,202,203,204
@@ -71,7 +71,7 @@
     url: "{{ AUTH_URL_VPC }}/v2.0/security-group-rules"
     method: POST
     body_format: raw
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     status_code: 200,201,202,203,204,409
