@@ -19,7 +19,8 @@
   when:
     - secgroup_id is defined
 
-- debug:
+- name: secgroupdetail
+  debug:
     msg: "{{ secgroupdetail.json }}"
   when:
     - secgroup_id is defined

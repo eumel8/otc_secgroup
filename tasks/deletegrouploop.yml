@@ -41,5 +41,6 @@
   changed_when: false
   when: (secgroup_id is defined and secgroup_id| length != 0)
 
-- debug:
+- name: secgroup
+  debug:
     msg: "{{ secgroup }}"

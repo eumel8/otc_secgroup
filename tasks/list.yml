@@ -32,10 +32,12 @@
   changed_when: false
   when: vpc_id is not defined
 
-- debug:
+- name: secgrouplistvpc
+  debug:
     msg: "{{ secgrouplistvpc.json }}"
   when: vpc_id is defined
 
-- debug:
+- name: secgrouplist
+  debug:
     msg: "{{ secgrouplist.json }}"
   when: vpc_id is not defined
