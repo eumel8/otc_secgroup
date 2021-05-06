@@ -2,7 +2,7 @@
   uri:
     url: "{{ AUTH_URL_VPC }}/v1/{{ PROJECT_ID }}/security-groups"
     method: GET
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     headers:
@@ -27,7 +27,7 @@
     url: "{{ AUTH_URL_VPC }}/v2.0/security-groups/{{ secgroup_id }}"
     method: DELETE
     body_format: raw
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     status_code: 200,201,202,203,204
@@ -41,5 +41,6 @@
   changed_when: false
   when: (secgroup_id is defined and secgroup_id| length != 0)
 
-- debug:
+- name: secgroup
+  debug:
     msg: "{{ secgroup }}"
